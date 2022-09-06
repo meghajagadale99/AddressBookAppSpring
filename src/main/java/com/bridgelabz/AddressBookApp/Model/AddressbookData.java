@@ -1,11 +1,11 @@
 package com.bridgelabz.AddressBookApp.Model;
 
 import com.bridgelabz.AddressBookApp.DTO.AddressbookDTO;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class AddressbookData {
     private int personId;
     private String name;

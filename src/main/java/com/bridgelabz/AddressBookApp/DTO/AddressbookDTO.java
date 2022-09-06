@@ -1,5 +1,8 @@
 package com.bridgelabz.AddressBookApp.DTO;
 
+import lombok.Data;
+
+@Data
 public class AddressbookDTO {
     public String name;
     public String phNumber;
