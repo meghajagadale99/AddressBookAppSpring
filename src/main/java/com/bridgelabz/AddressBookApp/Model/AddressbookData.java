@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="AddressBook")
+@Table(name = "AddressBook")
 public class AddressbookData {
     @Id
     @Column(name = "person_id")
@@ -25,14 +25,12 @@ public class AddressbookData {
     private String email;
 
 
-    public AddressbookData(int personId, AddressbookDTO addressbookDTO) {
-        this.personId = personId;
+    public AddressbookData(AddressbookDTO addressbookDTO) {
         this.updateAddressBookdata(addressbookDTO);
 
     }
 
     public AddressbookData() {
-
     }
 
     public void updateAddressBookdata(AddressbookDTO addressbookDTO) {
