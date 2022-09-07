@@ -19,9 +19,10 @@ public class AddressbookService implements IAddressbookService {
 
     @Override
     public AddressbookData getAddressbookDataById(int personId) {
-        AddressbookData addressbookData = null;
-        addressbookData = addressbookDataList.get(personId - 1);
-        return addressbookData;
+        return addressbookDataList.stream()
+                .filter(addressbookData -> addressbookData.getPersonId() == personId)
+                .findFirst()
+                .orElseThrow(() -> new AddressbookException("Person Not found"));
     }
 
     @Override
