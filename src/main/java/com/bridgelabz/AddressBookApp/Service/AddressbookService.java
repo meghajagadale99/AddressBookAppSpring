@@ -1,6 +1,7 @@
 package com.bridgelabz.AddressBookApp.Service;
 
 import com.bridgelabz.AddressBookApp.DTO.AddressbookDTO;
+import com.bridgelabz.AddressBookApp.Exception.AddressbookException;
 import com.bridgelabz.AddressBookApp.Model.AddressbookData;
 import org.springframework.stereotype.Service;
 
@@ -36,8 +37,7 @@ public class AddressbookService implements IAddressbookService {
     @Override
     public AddressbookData updateAddressbookData(int personId, AddressbookDTO addressbookDTO) {
         AddressbookData addressbookData = this.getAddressbookDataById(personId);
-        addressbookData.setName(addressbookDTO.name);
-        addressbookData.setPhNumber(addressbookDTO.phNumber);
+        addressbookData.updateAddressBookdata(addressbookDTO);
         addressbookDataList.set(personId - 1, addressbookData);
         return addressbookData;
     }
