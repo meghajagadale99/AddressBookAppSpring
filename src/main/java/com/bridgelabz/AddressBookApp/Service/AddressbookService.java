@@ -52,4 +52,29 @@ public class AddressbookService implements IAddressbookService {
         AddressbookData addressbookData = this.getAddressbookDataById(personId);
         addressbookRepository.delete(addressbookData);
     }
+
+    @Override
+    public List<AddressbookData> getPersonByName(String personName) {
+        return addressbookRepository.findPersonByName(personName);
+    }
+
+    @Override
+    public List<AddressbookData> getPersonByCity(String personCity) {
+        return addressbookRepository.findPersonByCity(personCity);
+    }
+
+    @Override
+    public List<AddressbookData> getPersonByState(String personState) {
+        return addressbookRepository.findPersonByState(personState);
+    }
+
+    @Override
+    public List<AddressbookData> getPersonByZipcode(String personZipcode) {
+        return addressbookRepository.findPersonByZipcode(personZipcode);
+    }
+
+    @Override
+    public List<AddressbookData> getPersonByPhonenumber(String personPhonenumber) {
+        return addressbookRepository.findPersonByPhonenumber(personPhonenumber);
+    }
 }

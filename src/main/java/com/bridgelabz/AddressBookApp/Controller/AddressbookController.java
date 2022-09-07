@@ -57,4 +57,43 @@ public class AddressbookController {
         ResponseDTO responseDTO = new ResponseDTO("Deleted data successfully", "person id: " + personId);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
+
+    @GetMapping("/firstName/{firstName}")
+    public ResponseEntity<ResponseDTO> getAddessBookDataByName(@PathVariable("firstName") String personName) {
+        List<AddressbookData> personDataList = null;
+        personDataList = addressbooService.getPersonByName(personName);
+        ResponseDTO respDTO = new ResponseDTO("Get Call for Name Successful", personDataList);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+    @GetMapping("/city/{city}")
+    public ResponseEntity<ResponseDTO> getAddessBookDataByCity(@PathVariable("city") String personCity) {
+        List<AddressbookData> personDataList = null;
+        personDataList = addressbooService.getPersonByCity(personCity);
+        ResponseDTO respDTO = new ResponseDTO("Get Call for City Successful", personDataList);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+    @GetMapping("/state/{state}")
+    public ResponseEntity<ResponseDTO> getAddessBookDataByState(@PathVariable("state") String personState) {
+        List<AddressbookData> personDataList = null;
+        personDataList = addressbooService.getPersonByState(personState);
+        ResponseDTO respDTO = new ResponseDTO("Get Call for State Successful", personDataList);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+    @GetMapping("/zip/{zip}")
+    public ResponseEntity<ResponseDTO> getAddessBookDataByZipcode(@PathVariable("zip") String personZipcode) {
+        List<AddressbookData> personDataList = null;
+        personDataList = addressbooService.getPersonByZipcode(personZipcode);
+        ResponseDTO respDTO = new ResponseDTO("Get Call for  Zipcode Successful", personDataList);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
+
+    @GetMapping("/phone/{phone}")
+    public ResponseEntity<ResponseDTO> getAddessBookDataByPhonenumber(@PathVariable("phone") String personPhonenumber) {
+        List<AddressbookData> personDataList = null;
+        personDataList = addressbooService.getPersonByPhonenumber(personPhonenumber);
+        ResponseDTO respDTO = new ResponseDTO("Get Call for Phone Number Successful", personDataList);
+        return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
+    }
 }
