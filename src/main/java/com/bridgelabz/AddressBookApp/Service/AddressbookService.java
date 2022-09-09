@@ -29,7 +29,7 @@ public class AddressbookService implements IAddressbookService {
     public AddressbookData getAddressbookDataById(int personId) {
         return addressbookRepository
                 .findById(personId)
-                .orElseThrow(() -> new AddressbookException("Person with perssonId " + personId + " doesnot exists"));
+                .orElseThrow(() -> new AddressbookException("Person with perssonId " + personId + " does not exists"));
     }
 
     @Override
