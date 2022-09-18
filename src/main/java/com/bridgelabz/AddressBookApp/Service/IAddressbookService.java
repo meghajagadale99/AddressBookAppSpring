@@ -16,13 +16,19 @@ public interface IAddressbookService {
 
     void deleteAddressbooData(int personId);
 
-    List<AddressbookData> getPersonByName(String personName);
+    List<AddressbookData> sortAddressBookByCity();
 
-    List<AddressbookData> getPersonByCity(String personCity);
+    List<AddressbookData> getAddressBookByCity(String city);
 
-    List<AddressbookData> getPersonByState(String personState);
+    List<AddressbookData> sortAddressBookByState();
 
-    List<AddressbookData> getPersonByZipcode(String personZipcode);
+    List<AddressbookData> getAddressBookByState(String state);
 
-    List<AddressbookData> getPersonByPhonenumber(String personPhonenumber);
+    List<AddressbookData> sortAddressBookByZip();
+
+    List<AddressbookData> getAddressBookByZip(String zip);
+
+    List<AddressbookData> sortAddressBookByName();
+
+    List<AddressbookData> getAddressBookByFirstName(String first_name);
 }

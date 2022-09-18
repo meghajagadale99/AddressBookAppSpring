@@ -54,27 +54,43 @@ public class AddressbookService implements IAddressbookService {
     }
 
     @Override
-    public List<AddressbookData> getPersonByName(String personName) {
-        return addressbookRepository.findPersonByName(personName);
+    public List<AddressbookData> sortAddressBookByCity() {
+        return addressbookRepository.sortByCity();
     }
 
     @Override
-    public List<AddressbookData> getPersonByCity(String personCity) {
-        return addressbookRepository.findPersonByCity(personCity);
+    public List<AddressbookData> getAddressBookByCity(String city) {
+        return addressbookRepository.findAllByCity(city);
     }
 
     @Override
-    public List<AddressbookData> getPersonByState(String personState) {
-        return addressbookRepository.findPersonByState(personState);
+    public List<AddressbookData> sortAddressBookByState() {
+        return addressbookRepository.sortByState();
     }
 
     @Override
-    public List<AddressbookData> getPersonByZipcode(String personZipcode) {
-        return addressbookRepository.findPersonByZipcode(personZipcode);
+    public List<AddressbookData> getAddressBookByState(String state) {
+        return addressbookRepository.findAllByState(state);
     }
 
     @Override
-    public List<AddressbookData> getPersonByPhonenumber(String personPhonenumber) {
-        return addressbookRepository.findPersonByPhonenumber(personPhonenumber);
+    public List<AddressbookData> sortAddressBookByZip() {
+        return addressbookRepository.sortByZip();
     }
+
+    @Override
+    public List<AddressbookData> getAddressBookByZip(String zip) {
+        return addressbookRepository.findAllByZip(zip);
+    }
+
+    @Override
+    public List<AddressbookData> sortAddressBookByName() {
+        return addressbookRepository.sortByName();
+    }
+
+    public List<AddressbookData> getAddressBookByFirstName(String first_name) {
+        return addressbookRepository.findAllByFirstName(first_name);
+    }
+
+
 }
